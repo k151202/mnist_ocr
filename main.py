@@ -10,7 +10,7 @@ model = tf.keras.models.load_model("model")
 
 
 def contour_rank(contour, cols):
-    """determines sequence of contours"""
+    """determine sequence of contours"""
     tolerance_factor = 50
     origin = cv2.boundingRect(contour)
     return ((origin[1] // tolerance_factor) * tolerance_factor) * cols + origin[0]
